@@ -31,5 +31,5 @@ function getShowHtml(show){
 findShow("office").then(shows => {
     let show = shows[0].show
     console.log(shows.length)
-    document.body.innerHTML = getShowHtml(show)
+    document.body.innerHTML = `<div class = "my-shows">${shows.map(show =>getShowHtml(show)).join('')}`
 })
