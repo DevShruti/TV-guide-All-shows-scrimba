@@ -32,4 +32,4 @@ function displayShows(shows) {
     document.body.innerHTML = `<div class = "my-shows">${shows.map(show =>getShowHtml(show.show)).join('')}`
 }
 
-findShow("office").then(displayShows)
+findShow("office").then(displayShows).catch(e => console.log(e))
