@@ -16,16 +16,19 @@ async function findShow(query) {
     return data
 }
 
+function getShowHtml(show){
+    return `<div class="my-show">
+    <div class="my-show-title">
+        ${show.name}
+    </div>
+    
+    <div class="my-show-summary">
+        ${show.summary}
+    </div>
+</div>`
+}
+
 findShow("office").then(shows => {
     let show = shows[0].show
-
-    document.body.innerHTML = `<div class="my-show">
-        <div class="my-show-title">
-            ${show.name}
-        </div>
-        
-        <div class="my-show-summary">
-            ${show.summary}
-        </div>
-    </div>`
+    document.body.innerHTML = getShowHtml(show)
 })
