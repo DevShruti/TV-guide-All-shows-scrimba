@@ -28,8 +28,8 @@ function getShowHtml(show){
 </div>`
 }
 
-findShow("office").then(shows => {
-    let show = shows[0].show
-    console.log(shows.length)
+function displayShows(shows) {
     document.body.innerHTML = `<div class = "my-shows">${shows.map(show =>getShowHtml(show.show)).join('')}`
-})
+}
+
+findShow("office").then(displayShows)
